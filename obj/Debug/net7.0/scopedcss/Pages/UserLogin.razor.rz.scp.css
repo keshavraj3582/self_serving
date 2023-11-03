@@ -1,0 +1,212 @@
+.popup[b-3mv8brxcne] {
+    width: 400px;
+    background: #fff;
+    border-radius: 6px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.1);
+    text-align: center;
+    padding: 0 30px 30px;
+    color: #333;
+    visibility: hidden;
+    transition: transform 0.4s, top 0.4s;
+}
+
+.open-popup[b-3mv8brxcne] {
+    visibility: visible;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.popup h2[b-3mv8brxcne] {
+    font-size: 38px;
+    font-weight: 500;
+    margin: 30px 0 10px;
+}
+
+.popup button[b-3mv8brxcne] {
+    width: 100%;
+    margin-top: 50px;
+    padding: 10px 0;
+    background: #6fd649;
+    color: #fff;
+    border: 0;
+    outline: none;
+    font-size: 18px;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+*[b-3mv8brxcne] {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* color variables */
+:root[b-3mv8brxcne] {
+    --primary-color: #c6c3c3;
+    --second-color: #ffffff;
+    --black-color: #000000;
+}
+
+body[b-3mv8brxcne] {
+    /* background-image: url("../images/bg1.jpg"); */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.wrapper[b-3mv8brxcne] {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.login_box[b-3mv8brxcne] {
+    position: relative;
+    width: 450px;
+    backdrop-filter: blur(25px);
+    border: 2px solid var(--primary-color);
+    border-radius: 15px;
+    padding: 7.5em 2.5em 4em 2.5em;
+    color: var(--second-color);
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.3);
+}
+
+.login-header[b-3mv8brxcne] {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary-color);
+    width: 140px;
+    height: 70px;
+    border-radius: 0 0 20px 20px;
+}
+
+.login-header span[b-3mv8brxcne] {
+    font-size: 30px;
+    color: var(--black-color);
+}
+
+.login-header[b-3mv8brxcne]::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -30px;
+    width: 30px;
+    height: 30px;
+    border-top-right-radius: 50%;
+    background: transparent;
+    box-shadow: 15px 0 0 0 var(--primary-color);
+}
+
+.login-header[b-3mv8brxcne]::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -30px;
+    width: 30px;
+    height: 30px;
+    border-top-left-radius: 50%;
+    background: transparent;
+    box-shadow: -15px 0 0 0 var(--primary-color);
+}
+
+.input_box[b-3mv8brxcne] {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0;
+}
+
+.input-field[b-3mv8brxcne] {
+    width: 100%;
+    height: 55px;
+    font-size: 16px;
+    background: transparent;
+    color: var(--primary-color);
+    padding-inline: 20px 50px;
+    border: 2px solid var(--primary-color);
+    border-radius: 30px;
+    outline: none;
+}
+
+#user[b-3mv8brxcne] {
+    margin-bottom: 10px;
+}
+
+.lable[b-3mv8brxcne] {
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    transition: .2s;
+}
+
+.input-field:focus~.lable[b-3mv8brxcne],
+.input-field:valid~.lable[b-3mv8brxcne] {
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    font-size: 14px;
+    background-color: var(--primary-color);
+    border-radius: 30px;
+    color: var(--black-color);
+    padding: 0 10px;
+}
+
+.icon[b-3mv8brxcne] {
+    position: absolute;
+    top: 18px;
+    right: 25px;
+    font-size: 20px;
+}
+
+.remember-forgot[b-3mv8brxcne] {
+    display: flex;
+    justify-content: space-between;
+    font-size: 15px;
+}
+
+.input-submit[b-3mv8brxcne] {
+    width: 100%;
+    height: 50px;
+    background: #ececec;
+    font-size: 16px;
+    font-weight: 500;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+.input-submit:hover[b-3mv8brxcne] {
+    background: var(--second-color);
+}
+
+.register[b-3mv8brxcne] {
+    text-align: center;
+}
+
+.register a[b-3mv8brxcne] {
+    font-weight: 500;
+}
+
+@media only screen and (max-width: 564px) {
+    .wrapper[b-3mv8brxcne] {
+        padding: 20px;
+    }
+
+    .login_box[b-3mv8brxcne] {
+        padding: 7.5em 1.5em 4em 1.5em;
+    }
+}

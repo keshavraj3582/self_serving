@@ -1,0 +1,197 @@
+@page "/register"
+@using System.Net.Http.Json
+@using System.Net.Http
+@inject HttpClient Http
+@using Microsoft.AspNetCore.Components.Web
+@inject NavigationManager NavigationManager
+@using user_service.Models
+@inject EmailService EmailService
+
+
+<PageTitle>Register User</PageTitle>
+
+<EditForm id="login-form" Model="model">
+    <div class="wrapper">
+        <div class="login_box">
+            <div class="login-header">
+                <span id="Register">Register</span>
+            </div>
+
+            <div class="input_box">
+                <label class="label" for="RegName"><b>Name</b></label>
+                <InputText type="text" id="RegName" class="form-control" @bind-Value="model.RegName" required />
+            </div>
+
+            <div class="input_box">
+                <label class="label" for="RegPhone"><b>Phone Number</b></label>
+                <InputText type="text" id="RegPhone" class="form-control" @bind-Value="model.RegPhone" required />
+            </div>
+
+            <div class="input_box">
+                <label class="label" for="RegDest"><b>Designation</b></label>
+                <InputText type="text" id="RegDest" class="form-control" @bind-Value="model.RegDest" required />
+            </div>
+            <!-- OTP from User -->
+            <div class="input_box">
+                <label class="label" for="Email"><b>Email</b></label>
+                <InputText type="text" id="Email" class="form-control" @bind-Value="model.Email" required />
+            </div>
+            <!-- Submit Button -->
+            <div class="input_box">
+                <button class="input-submit" @onclick="SendOPT">Sent Otp</button>
+            </div>
+        </div>
+    </div>
+</EditForm>
+@code {
+    // private string RegName = "";
+    // private string RegPhone = "";
+    // private string RegDest = "";
+    // private string Email = "";
+    // private string OTP = "";
+
+    private Model model = new Model();
+
+    private async Task SendOPT()
+    {
+        EmailService.GlobalEmail = model.Email;
+
+      //  model.RegName = RegName;
+       // model.RegPhone = RegPhone;
+       // model.RegDest = RegDest;
+        //var encodedEmail = Uri.EscapeDataString(model.Email);
+      //  model.Email = Email;
+      //  model.OTP = OTP;
+        // if (model.Email != null)
+        //{
+          //  var encodedEmail = Uri.EscapeDataString(model.Email);
+           // model.Email = encodedEmail;
+        //}
+        // Send OTP logic here using HttpClient
+        var response = await Http.PostAsJsonAsync("https://localhost:7128/api/Email/otp", model);
+        //await StorageService.SetItem("UserEmail", model.Email);
+      //  await StorageService.SetItem("OTP", OTP);
+        
+
+        if (response.IsSuccessStatusCode)
+        {
+            NavigationManager.NavigateTo("/validateEmail");
+            
+           // var responseContent = await response.Content.ReadAsStringAsync();
+            //Console.WriteLine("1");
+
+           // if (responseContent == "OTP sent successfully.")
+           // {
+                
+               // Console.WriteLine("2");
+           // }
+           
+        }
+       
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@* @page "/register"
+@using System.Net.Http.Json
+@using System.Net.Http
+@inject HttpClient Http
+@using Microsoft.AspNetCore.Components.Web
+@inject NavigationManager NavigationManager
+@using TagWebApp.Models
+
+
+<PageTitle>Register User</PageTitle>
+
+<EditForm id="login-form" model="newm">
+    <div class="wrapper">
+        <div class="login_box">
+            <div class="login-header">
+                <span id="Register">Register</span>
+            </div>
+
+            <div class="input_box">
+                <label class="label" for="RegName"><b>Name</b></label>
+                <InputText type="text" id="RegName" class="form-control" @bind-Value="newm.RegName" required />
+            </div>
+
+            <div class="input_box">
+                <label class="label" for="RegPhone"><b>Phone Number</b></label>
+                <InputText type="text" id="RegPhone" class="form-control" @bind-Value="newm.RegPhone" required />
+            </div>
+
+            <div class="input_box">
+                <label class="label" for="RegDest"><b>Designation</b></label>
+                <InputText type="text" id="RegDest" class="form-control" @bind-Value="newm.RegDest" required />
+            </div>
+            <!-- OTP from User -->
+            <div class="input_box">
+                <label class="label" for="Email"><b>Email</b></label>
+                <InputText type="text" id="Email" class="form-control" @bind-Value="newm.Email" required />
+            </div>
+            <!-- Submit Button -->
+            <div class="input_box">
+                <button class="input-submit" @onclick="SendOPT">Sent Otp</button>
+            </div>
+        </div>
+    </div>
+</EditForm>
+@code {
+    Model newm = new Model();
+    private string RegName = "";
+    private string RegPhone = "";
+    private string RegDest = "";
+    private string Email = "";
+ 
+
+    private async Task SendOPT()
+    {
+        // Send OTP logic here using HttpClient
+        var response = await Http.PostAsJsonAsync("https://localhost:7128/api/Email/otp", newm);
+        Console.WriteLine(RegName);
+        Console.WriteLine(RegPhone);
+        Console.WriteLine(RegDest);
+        Console.WriteLine(Email);
+
+        if (response.IsSuccessStatusCode)
+        {
+            var responseContent = await response.Content.ReadAsStringAsync();
+            Console.WriteLine("1");
+
+            if (responseContent == "OTP sent successfully.")
+            {
+                NavigationManager.NavigateTo("/validateEmail");
+                Console.WriteLine("2");
+            }
+            else
+            {
+                Console.WriteLine("Email Not Sent");
+                Console.WriteLine("3");
+            }
+        }
+        else
+        {
+            Console.WriteLine(response.StatusCode);
+            Console.WriteLine("4");
+        }
+    }
+} *@

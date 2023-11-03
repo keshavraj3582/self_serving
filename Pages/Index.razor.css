@@ -1,0 +1,49 @@
+.container {
+    /* padding-left: 25%; */
+    padding-top: 5%;
+}
+
+.buttons {
+    padding-left: 40%;
+}
+
+button {
+    /* background-color: #0c04aa; */
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: 2px solid black;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 15%;
+    height: 5%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: large;
+    font-weight: 10px;
+}
+
+button:hover {
+    background-color: red;
+}
+
+#heading {
+    background: linear-gradient(45deg, #ff0000, #ff6600, #199b7f, #e463a4, #0000ff, #804095);
+    -webkit-background-clip: text;
+    color: transparent;
+    background-size: 200% 100%;
+    animation: gradient 10s linear infinite;
+    text-align: center;
+    font-family: cursive;
+    font-weight: 20px;
+    font-size: 35px;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 200% 0;
+    }
+
+    100% {
+        background-position: -200% 0;
+    }
+}
