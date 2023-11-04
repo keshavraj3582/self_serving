@@ -8,7 +8,7 @@
 
 
 <PageTitle>Login</PageTitle>
-@* <h3>Login Form</h3> *@
+
 
 <EditForm Model="model" id="login-form">
     <div class="wrapper">
@@ -17,52 +17,36 @@
                 <span>Login</span>
             </div>
 
-            <!-- Username from User -->
+           
             <div class="input_box">
                 <label class="label" for="Email">Email</label>
                 <InputText type="text" id="Email" class="input-field" @bind-Value="model.Email" required />
             </div>
 
-            <!-- Submit Button -->
             <div class="input_box">
-                <button class="input-submit" @onclick="SendOPT">Sent Otp</button>
+                <button class="input-submit" @onclick="SendOTP">Sent Otp</button>
             </div>
         </div>
     </div>
 </EditForm>
 
 @code {
-    // private string Email = "";
-    //private string OTP = "";
+   
     private Model model = new Model();
 
 
-    private async Task SendOPT()
+    private async Task SendOTP()
     {
         
         storage.GlobalLogin = model.Email;
-        // model.Email = Email;
-        //model.OTP = OTP;
+       
         var encodedEmail = Uri.EscapeDataString(model.Email);
-        //await StorageService.SetItem("UserEmail", model.Email);
-        //await StorageService.SetItem("OTP", OTP);
-        var url = $"https://localhost:7128/api/Sendotpforlogin?email={encodedEmail}";
+        var url = $"https://localhost:7128/Api/SendOtpForLogin?email={encodedEmail}";
         var response = await HttpClient.PostAsJsonAsync(url, model.Email);
         if (response.IsSuccessStatusCode)
         {
             NavigationManager.NavigateTo("/validateLogin");
         }
-            //var responseContent = await response.Content.ReadAsStringAsync();
-            //if (responseContent == "OTP sent successfully.");
-            //Console.WriteLine("1");
-
-            
-            //{
-        
-        //Console.WriteLine("2");
-        //}
-    
-    
     
         }
 }

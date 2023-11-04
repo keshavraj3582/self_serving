@@ -31,63 +31,63 @@
                 <label class="label" for="RegDest"><b>Designation</b></label>
                 <InputText type="text" id="RegDest" class="form-control" @bind-Value="model.RegDest" required />
             </div>
-            <!-- OTP from User -->
+            
             <div class="input_box">
                 <label class="label" for="Email"><b>Email</b></label>
                 <InputText type="text" id="Email" class="form-control" @bind-Value="model.Email" required />
             </div>
-            <!-- Submit Button -->
+           
             <div class="input_box">
-                <button class="input-submit" @onclick="SendOPT">Sent Otp</button>
+                <button class="input-submit" @onclick="SendOTP">Sent Otp</button>
             </div>
         </div>
     </div>
 </EditForm>
+@if (!string.IsNullOrEmpty(postMessage))
+{
+    <div class="alert alert-success mt-3">@postMessage</div>
+}
+
 @code {
-    // private string RegName = "";
-    // private string RegPhone = "";
-    // private string RegDest = "";
-    // private string Email = "";
-    // private string OTP = "";
+
 
     private Model model = new Model();
 
-    private async Task SendOPT()
+
+    public string postMessage { get; set; }
+
+    private async Task SendOTP()
     {
         EmailService.GlobalEmail = model.Email;
 
-      //  model.RegName = RegName;
-       // model.RegPhone = RegPhone;
-       // model.RegDest = RegDest;
-        //var encodedEmail = Uri.EscapeDataString(model.Email);
-      //  model.Email = Email;
-      //  model.OTP = OTP;
-        // if (model.Email != null)
-        //{
-          //  var encodedEmail = Uri.EscapeDataString(model.Email);
-           // model.Email = encodedEmail;
-        //}
-        // Send OTP logic here using HttpClient
-        var response = await Http.PostAsJsonAsync("https://localhost:7128/api/Email/otp", model);
-        //await StorageService.SetItem("UserEmail", model.Email);
-      //  await StorageService.SetItem("OTP", OTP);
+
+        try{
+            var response = await Http.PostAsJsonAsync("https://localhost:7128/Api/SendOtpForRegistration", model);
+
+            if (response.IsSuccessStatusCode)
+            {
+                postMessage = "Student data posted successfully.";
+                NavigationManager.NavigateTo("/validateEmail");
+            }
+            else if (response.StatusCode == System.Net.HttpStatusCode.BadRequest)
+            {
+                postMessage = "Error posting Your data. ";
+
+            }
+            else
+            {
+                postMessage = "Error";
+            }
+        }
+        catch (Exception ex)
+        {
+            postMessage = "Error posting Your data. : ";
+
+        }
         
 
-        if (response.IsSuccessStatusCode)
-        {
-            NavigationManager.NavigateTo("/validateEmail");
-            
-           // var responseContent = await response.Content.ReadAsStringAsync();
-            //Console.WriteLine("1");
+        
 
-           // if (responseContent == "OTP sent successfully.")
-           // {
-                
-               // Console.WriteLine("2");
-           // }
-           
-        }
-       
     }
 }
 

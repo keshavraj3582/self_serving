@@ -50,16 +50,10 @@
             emailforlogin = model.emailforlogin
         };
         
-        var response = await Http.PostAsJsonAsync("https://localhost:7128/api/Sendotpforlogin/validateotpforlogin", payload);
+        var response = await Http.PostAsJsonAsync("https://localhost:7128/Api/ValidateOtpForLogin", payload);
         if (response.IsSuccessStatusCode)
         {
-            NavigationManager.NavigateTo("/welcome");
-            // var responseContent = await response.Content.ReadAsStringAsync();
-            // if (responseContent == "OTP is valid")
-            // {
-            //     NavigationManager.NavigateTo("/welcome");
-            // }
-           
+            NavigationManager.NavigateTo("/welcome");        
         }
     
     }

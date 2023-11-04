@@ -16,7 +16,7 @@
                 <span id="Register">Validate Email</span>
             </div>
 
-            <!-- OTP from User -->
+            
             <div class="input_box">
                 <label class="label" for="Email"></label>
                 <InputText type="text" id="otp" class="input-field" @bind-Value="model.emailforval" readonly />
@@ -26,7 +26,7 @@
                 <InputText type="text" id="otp" class="input-field" @bind-Value="model.OTP" required />
             </div>
 
-            <!-- Submit Button -->
+      
             <div class="input_box">
                 <button class="input-submit" @onclick="Validate">Validate</button>
             </div>
@@ -35,9 +35,8 @@
 </EditForm>
 
 @code {
-        // private string OTP = "";
+        
     private Model model = new Model();
-    // public string OTP = "";
     protected override void OnInitialized()
     {
         model.emailforval = EmailService.GlobalEmail;
@@ -51,28 +50,13 @@
             OTP = model.OTP,
             emailforval = model.emailforval
         };
-        // OTP = model.OTP;
-        //  OTP = model.OTP;
-        //string userEmail = await StorageService.GetItem("UserEmail");
-        //OTP = await StorageService.GetItem("OTP");
-        // Validate OTP logic here using HttpClient
-        var response = await Http.PostAsJsonAsync("https://localhost:7128/api/Email/validateotp", payload);
+        
+        var response = await Http.PostAsJsonAsync("https://localhost:7128/Api/ValidateOtpForRegistration", payload);
 
         if (response.IsSuccessStatusCode)
         {
             NavigationManager.NavigateTo("/login");
         }
-        // var responseContent = await response.Content.ReadAsStringAsync();
-
-        // if (responseContent == "Email validated.")
-        
-        //Console.WriteLine("Email Validated");
        
-    //    }
-      //  }
-        //else
-        //{
-        //Console.WriteLine(response.StatusCode);
-        //} 
     }
 }
