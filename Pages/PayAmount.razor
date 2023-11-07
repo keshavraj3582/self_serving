@@ -1,0 +1,96 @@
+﻿@page "/payment"
+@inject HttpClient httpclinet
+@using user_service.Models
+@inject IJSRuntime JSRuntime
+
+<h3>Payment Details</h3>
+
+
+<EditForm Model="@registrationModel" OnValidSubmit="TotalPaymentAmounts">
+    <div class="row">
+        <div class="offset-1 col-2">
+            <strong>Name</strong>
+        </div>
+        <div class="col-4">
+            <input type="text" for="Name" @bind="registrationModel.Name" class="form-control" disabled />
+        </div>
+    </div>
+    <div class="row">
+        <div class="offset-1 col-2">
+            <strong>Mobile</strong>
+        </div>
+        <div class="col-4">
+            <input type="text" for="Mobile" @bind="registrationModel.Mobile" class="form-control" disabled />
+        </div>
+    </div>
+    <div class="row">
+        <div class="offset-1 col-2">
+            <strong>Email</strong>
+        </div>
+        <div class="col-4">
+            <input type="text" for="Email" @bind="registrationModel.Email" class="form-control" disabled />
+        </div>
+    </div>
+    <div class="row">
+        <div class="offset-1 col-2">
+            <strong>Amount</strong>
+        </div>
+        <div class="col-4">
+            <input type="number" class="form-control" for="Amount" @bind="registrationModel.Amount" disabled /><br />
+            <button type="submit" class="btn btn-outline-primary form-control"> Pay </button>
+        </div>
+    </div>
+
+</EditForm>
+
+
+@code {
+    public RegistrationModel registrationModel = new RegistrationModel();
+    [Inject]
+    private NavigationManager NavigationManager { get; set; }
+
+    public RazorPayOptionsModel razorPayOptionsModel;
+
+    public async Task TotalPaymentAmounts()
+    {
+        var response = await httpclinet.PostAsJsonAsync("https://localhost:7128/api/Modules/payment", registrationModel);
+
+        if (response.IsSuccessStatusCode)
+        {
+            razorPayOptionsModel = await response.Content.ReadFromJsonAsync<RazorPayOptionsModel>();
+            await JSRuntime.InvokeVoidAsync("openRazorpayUI", razorPayOptionsModel);
+
+            //NavigationManager.NavigateTo("/razorpayUI");
+        }
+    }
+}
+<script>
+    function openRazorpayUI(razorPayOptions) {
+        var options = {
+            key: razorPayOptions.key,
+            amount: razorPayOptions.amount,
+            currency: razorPayOptions.currency,
+            name: razorPayOptions.name,
+            description: razorPayOptions.description,
+            order_id: razorPayOptions.orderId,
+            handler: function (response) {
+                // Handle the response from Razorpay (e.g., payment success)
+                console.log(response);
+
+                // You can perform additional actions here
+            },
+            prefill: {
+                "name": razorPayOptions.profileName,
+                "email": razorPayOptions.profileEmail,
+                "contact": razorPayOptions.profileContact
+            },
+            theme: {
+                "color": "#F37254"
+            }
+        };
+
+        var rzp = new Razorpay(options);
+        rzp.open();
+    }
+</script>
+

@@ -628,7 +628,6 @@ C:\Users\DELL\source\repos\user_service\obj\Debug\net7.0\build-gz\4JrKh5KX.gz
 C:\Users\DELL\source\repos\user_service\obj\Debug\net7.0\build-gz\MtgSvhSX.gz
 C:\Users\DELL\source\repos\user_service\obj\Debug\net7.0\build-gz\cwueKatE.gz
 C:\Users\DELL\source\repos\user_service\obj\Debug\net7.0\build-gz\KBsTJiQa.gz
-C:\Users\DELL\source\repos\user_service\obj\Debug\net7.0\build-gz\opaC6nme.gz
 C:\Users\DELL\source\repos\user_service\obj\Debug\net7.0\build-gz\8nr5vIxf.gz
 C:\Users\DELL\source\repos\user_service\obj\Debug\net7.0\build-gz\wxkQMTWG.gz
 C:\Users\DELL\source\repos\user_service\obj\Debug\net7.0\build-gz\VpXoDDot.gz
@@ -817,6 +816,12 @@ C:\Users\DELL\source\repos\user_service\obj\Debug\net7.0\staticwebassets\msbuild
 C:\Users\DELL\source\repos\user_service\obj\Debug\net7.0\staticwebassets.pack.json
 C:\Users\DELL\source\repos\user_service\obj\Debug\net7.0\staticwebassets.build.json
 C:\Users\DELL\source\repos\user_service\obj\Debug\net7.0\staticwebassets.development.json
+C:\Users\DELL\source\repos\user_service\obj\Debug\net7.0\scopedcss\Pages\Index.razor.rz.scp.css
+C:\Users\DELL\source\repos\user_service\obj\Debug\net7.0\scopedcss\Pages\RegisterUser.razor.rz.scp.css
+C:\Users\DELL\source\repos\user_service\obj\Debug\net7.0\scopedcss\Pages\UserLogin.razor.rz.scp.css
+C:\Users\DELL\source\repos\user_service\obj\Debug\net7.0\scopedcss\Pages\ValidateEmail.razor.rz.scp.css
+C:\Users\DELL\source\repos\user_service\obj\Debug\net7.0\scopedcss\Pages\ValidateLogin.razor.rz.scp.css
+C:\Users\DELL\source\repos\user_service\obj\Debug\net7.0\scopedcss\Pages\Welcome.razor.rz.scp.css
 C:\Users\DELL\source\repos\user_service\obj\Debug\net7.0\scopedcss\Shared\MainLayout.razor.rz.scp.css
 C:\Users\DELL\source\repos\user_service\obj\Debug\net7.0\scopedcss\Shared\NavMenu.razor.rz.scp.css
 C:\Users\DELL\source\repos\user_service\obj\Debug\net7.0\scopedcss\bundle\user_service.styles.css
@@ -826,9 +831,4 @@ C:\Users\DELL\source\repos\user_service\obj\Debug\net7.0\user_service.dll
 C:\Users\DELL\source\repos\user_service\obj\Debug\net7.0\refint\user_service.dll
 C:\Users\DELL\source\repos\user_service\obj\Debug\net7.0\user_service.pdb
 C:\Users\DELL\source\repos\user_service\obj\Debug\net7.0\ref\user_service.dll
-C:\Users\DELL\source\repos\user_service\obj\Debug\net7.0\scopedcss\Pages\Index.razor.rz.scp.css
-C:\Users\DELL\source\repos\user_service\obj\Debug\net7.0\scopedcss\Pages\RegisterUser.razor.rz.scp.css
-C:\Users\DELL\source\repos\user_service\obj\Debug\net7.0\scopedcss\Pages\UserLogin.razor.rz.scp.css
-C:\Users\DELL\source\repos\user_service\obj\Debug\net7.0\scopedcss\Pages\ValidateEmail.razor.rz.scp.css
-C:\Users\DELL\source\repos\user_service\obj\Debug\net7.0\scopedcss\Pages\ValidateLogin.razor.rz.scp.css
-C:\Users\DELL\source\repos\user_service\obj\Debug\net7.0\scopedcss\Pages\Welcome.razor.rz.scp.css
+C:\Users\DELL\source\repos\user_service\obj\Debug\net7.0\build-gz\opaC6nme.gz

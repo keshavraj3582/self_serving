@@ -31,12 +31,17 @@
                 <button class="input-submit" @onclick="Validate">Validate</button>
             </div>
         </div>
+        @if (!string.IsNullOrEmpty(emailMessage))
+        {
+            <div class="alert alert-success mt-3">@emailMessage</div>
+        }
     </div>
 </EditForm>
 
 @code {
-        
+
     private Model model = new Model();
+    private string emailMessage { get; set; }
     protected override void OnInitialized()
     {
         model.emailforval = EmailService.GlobalEmail;
@@ -56,6 +61,15 @@
         if (response.IsSuccessStatusCode)
         {
             NavigationManager.NavigateTo("/login");
+        }
+        else if (response.StatusCode == System.Net.HttpStatusCode.BadRequest)
+        {
+            emailMessage = "Invalid Otp";
+
+        }
+        else
+        {
+            emailMessage = "Internal server error";
         }
        
     }

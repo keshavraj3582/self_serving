@@ -26,14 +26,19 @@
             <div class="input_box">
                 <button class="input-submit" @onclick="SendOTP">Sent Otp</button>
             </div>
+            
         </div>
+        @if (!string.IsNullOrEmpty(loginMessage))
+        {
+            <div class="alert alert-success mt-3">@loginMessage</div>
+        }
     </div>
 </EditForm>
 
 @code {
    
     private Model model = new Model();
-
+    public string loginMessage { get; set; }
 
     private async Task SendOTP()
     {
@@ -46,6 +51,15 @@
         if (response.IsSuccessStatusCode)
         {
             NavigationManager.NavigateTo("/validateLogin");
+        }
+        else if (response.StatusCode == System.Net.HttpStatusCode.BadRequest)
+        {
+            loginMessage = "Email not exists please register first.";
+
+        }
+        else
+        {
+            loginMessage = "Invalid Email";
         }
     
         }

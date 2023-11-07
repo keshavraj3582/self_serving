@@ -31,12 +31,17 @@
                 <button class="input-submit" @onclick="Validate">Validate</button>
             </div>
         </div>
+        @if (!string.IsNullOrEmpty(otpMessage))
+        {
+            <div class="alert alert-success mt-3">@otpMessage</div>
+        }
     </div>
 </EditForm>
 
 @code {
     // private string OTP = "";
     private Model model = new Model();
+    private string otpMessage { get; set; }
     protected override void OnInitialized()
     {
         model.emailforlogin = storage.GlobalLogin;
@@ -49,11 +54,20 @@
             enteredotp = model.OTP,
             emailforlogin = model.emailforlogin
         };
-        
+
         var response = await Http.PostAsJsonAsync("https://localhost:7128/Api/ValidateOtpForLogin", payload);
         if (response.IsSuccessStatusCode)
         {
             NavigationManager.NavigateTo("/welcome");        
+        }
+        else if (response.StatusCode == System.Net.HttpStatusCode.BadRequest)
+        {
+            otpMessage = "Invalid OTP";
+
+        }
+        else
+        {
+            otpMessage = "Internal Server Error";
         }
     
     }

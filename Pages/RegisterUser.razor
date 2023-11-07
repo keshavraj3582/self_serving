@@ -41,12 +41,13 @@
                 <button class="input-submit" @onclick="SendOTP">Sent Otp</button>
             </div>
         </div>
+        @if (!string.IsNullOrEmpty(postMessage))
+        {
+            <div class="alert alert-success mt-3">@postMessage</div>
+        }
     </div>
 </EditForm>
-@if (!string.IsNullOrEmpty(postMessage))
-{
-    <div class="alert alert-success mt-3">@postMessage</div>
-}
+
 
 @code {
 
@@ -71,17 +72,17 @@
             }
             else if (response.StatusCode == System.Net.HttpStatusCode.BadRequest)
             {
-                postMessage = "Error posting Your data. ";
+                postMessage = "Email Already Exists Login  ";
 
             }
             else
             {
-                postMessage = "Error";
+                postMessage = "Invalid Email";
             }
         }
         catch (Exception ex)
         {
-            postMessage = "Error posting Your data. : ";
+            postMessage = "Internal Error ";
 
         }
         
