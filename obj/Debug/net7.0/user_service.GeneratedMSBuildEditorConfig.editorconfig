@@ -9,57 +9,57 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = browser
 build_property.RootNamespace = user_service
 build_property.RootNamespace = user_service
-build_property.ProjectDir = C:\Users\DELL\source\repos\user_service\
+build_property.ProjectDir = C:\Users\DELL\source\repos\user_service\self_serving_tag\
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\DELL\source\repos\user_service
+build_property.MSBuildProjectDirectory = C:\Users\DELL\source\repos\user_service\self_serving_tag
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/DELL/source/repos/user_service/App.razor]
+[C:/Users/DELL/source/repos/user_service/self_serving_tag/App.razor]
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/DELL/source/repos/user_service/Pages/PayAmount.razor]
+[C:/Users/DELL/source/repos/user_service/self_serving_tag/Pages/PayAmount.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGF5QW1vdW50LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/DELL/source/repos/user_service/Shared/SurveyPrompt.razor]
+[C:/Users/DELL/source/repos/user_service/self_serving_tag/Shared/SurveyPrompt.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFN1cnZleVByb21wdC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/DELL/source/repos/user_service/_Imports.razor]
+[C:/Users/DELL/source/repos/user_service/self_serving_tag/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/DELL/source/repos/user_service/Pages/Index.razor]
+[C:/Users/DELL/source/repos/user_service/self_serving_tag/Pages/Index.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-h6sz5mb1od
 
-[C:/Users/DELL/source/repos/user_service/Pages/RegisterUser.razor]
+[C:/Users/DELL/source/repos/user_service/self_serving_tag/Pages/RegisterUser.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVnaXN0ZXJVc2VyLnJhem9y
 build_metadata.AdditionalFiles.CssScope = b-smbnd870ja
 
-[C:/Users/DELL/source/repos/user_service/Pages/UserLogin.razor]
+[C:/Users/DELL/source/repos/user_service/self_serving_tag/Pages/UserLogin.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlckxvZ2luLnJhem9y
 build_metadata.AdditionalFiles.CssScope = b-3mv8brxcne
 
-[C:/Users/DELL/source/repos/user_service/Pages/ValidateEmail.razor]
+[C:/Users/DELL/source/repos/user_service/self_serving_tag/Pages/ValidateEmail.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVmFsaWRhdGVFbWFpbC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = b-194xjsorrl
 
-[C:/Users/DELL/source/repos/user_service/Pages/ValidateLogin.razor]
+[C:/Users/DELL/source/repos/user_service/self_serving_tag/Pages/ValidateLogin.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVmFsaWRhdGVMb2dpbi5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = b-ek0uyjw65v
 
-[C:/Users/DELL/source/repos/user_service/Pages/Welcome.razor]
+[C:/Users/DELL/source/repos/user_service/self_serving_tag/Pages/Welcome.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcV2VsY29tZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = b-q12u53b133
 
-[C:/Users/DELL/source/repos/user_service/Shared/MainLayout.razor]
+[C:/Users/DELL/source/repos/user_service/self_serving_tag/Shared/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-0uwrh8or5p
 
-[C:/Users/DELL/source/repos/user_service/Shared/NavMenu.razor]
+[C:/Users/DELL/source/repos/user_service/self_serving_tag/Shared/NavMenu.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE5hdk1lbnUucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-s7r0v0ctjt

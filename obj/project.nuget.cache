@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "2FSDDDhazcyqL9y6q12Z5DQes5QiQzzYr1jwdwk7H/SiBWpwfXvtJ+Fu/wZQW0tR3hmgscpkSmN2mKEi6UowIg==",
+  "dgSpecHash": "X5grsK7DYpzZ4EA3inNUiUpuNlv6TiWTA4LweaLZjKJ5QZ7/K3XKOkn1nd94NwEnr0iLuKjJPtmVV7Ou0D7B9A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\DELL\\source\\repos\\user_service\\user_service.csproj",
+  "projectFilePath": "C:\\Users\\DELL\\source\\repos\\user_service\\self_serving_tag\\user_service.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\DELL\\.nuget\\packages\\microsoft.aspnetcore.authorization\\7.0.11\\microsoft.aspnetcore.authorization.7.0.11.nupkg.sha512",
     "C:\\Users\\DELL\\.nuget\\packages\\microsoft.aspnetcore.components\\7.0.11\\microsoft.aspnetcore.components.7.0.11.nupkg.sha512",

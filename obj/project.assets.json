@@ -1807,11 +1807,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\DELL\\source\\repos\\user_service\\user_service.csproj",
+      "projectUniqueName": "C:\\Users\\DELL\\source\\repos\\user_service\\self_serving_tag\\user_service.csproj",
       "projectName": "user_service",
-      "projectPath": "C:\\Users\\DELL\\source\\repos\\user_service\\user_service.csproj",
+      "projectPath": "C:\\Users\\DELL\\source\\repos\\user_service\\self_serving_tag\\user_service.csproj",
       "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\DELL\\source\\repos\\user_service\\obj\\",
+      "outputPath": "C:\\Users\\DELL\\source\\repos\\user_service\\self_serving_tag\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\DevExpress 23.1\\Components\\Offline Packages"
