@@ -1,0 +1,197 @@
+﻿@page "/add_School"
+@using user_service.Models
+@inject HttpClient HttpClient
+@using Microsoft.AspNetCore.Components.Web
+@using System.Net.Http.Json
+@using System.Threading.Tasks
+@inject NavigationManager Navigation
+@using System.Net.Http
+@using Newtonsoft.Json;
+
+@inject HttpClient HttpClient
+
+<h3>Add Institution</h3>
+
+<EditForm Model="@institution" OnValidSubmit="HandleValidSubmit">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <label>Institution Name:</label>
+    <InputText @bind-Value="institution.InstitutionName" /><br />
+
+    <!-- Add other form fields here -->
+
+    <label>Address:</label>
+    <InputText @bind-Value="institution.Address" /><br />
+
+    <label>Zip Codes:</label>
+    <InputText @bind-Value="institution.ZipCodes" /><br />
+
+    <label>Country:</label>
+    <InputText @bind-Value="institution.Country" /><br />
+
+    <label>State:</label>
+    <InputText @bind-Value="institution.State" /><br />
+
+    <label>City:</label>
+    <InputText @bind-Value="institution.City" /><br />
+
+    <label>Contact:</label>
+    <InputText @bind-Value="institution.Contact" /><br />
+
+    <label>URL:</label>
+    <InputText @bind-Value="institution.Url" /><br />
+
+    <label>Available Exams:</label>
+    <select @bind="institution.SelectedExams">
+        @foreach (var exam in institution.AvailableExams)
+        {
+            <option value="@exam">@exam</option>
+        }
+    </select><br />
+
+
+    <label>Selected Exams:</label>
+    <InputText @bind-Value="institution.SelectedExams" /><br />
+
+
+    <label>Available Facilities:</label>
+    <select @bind="institution.SelectedFacility">
+        @foreach (var facility in institution.AvailableFacility)
+        {
+            <option value="@facility">@facility</option>
+        }
+    </select><br />
+
+    <label>Selected Facility:</label>
+    <InputText @bind-Value="institution.SelectedFacility" /><br />
+
+    <label>School Code:</label>
+    <InputText @bind-Value="institution.SchoolCode" /><br />
+
+    <label>Verification Status:</label>
+    <InputCheckbox @bind-Value="institution.VerificationStatus" /><br />
+
+
+    <button type="submit">Submit</button>
+</EditForm>
+
+<!-- Modal for Success -->
+<div class="popup @(successPopupVisible ? "open-popup" : "")" @ref="successPopup">
+    <h2 id="successMessage">@successMessage</h2>
+    <button type="button" @onclick="CloseSuccessPopup">Ok</button>
+</div>
+
+<!-- Modal for Failure -->
+<div class="popup @(failurePopupVisible ? "open-popup" : "")" @ref="failurePopup">
+    <h2 id="failureMessage">@failureMessage</h2>
+    <button type="button" @onclick="CloseFailurePopup">Ok</button>
+</div>
+
+
+@code {
+    Institution institution = new Institution();
+    SchoolRegistrationModule module = new SchoolRegistrationModule();
+
+    private string apiUrl = "https://localhost:7128/";
+
+    private string zipCode;
+
+
+
+
+    public List<string> AvailableFacility { get; set; } = new List<string> { "Select", "DAY CUM RESIDENTIAL", "DAY SCHOOL", "RESIDENTIAL SCHOOL" };
+
+    decimal TotalPrice = 0;
+
+    @* fields for Modal *@
+    private bool successPopupVisible = false;
+    private string successMessage = "";
+
+    private bool failurePopupVisible = false;
+    private string failureMessage = "";
+
+    private ElementReference successPopup;
+    private ElementReference failurePopup;
+
+    //Getting City, State & Country Using ZipCodes
+    private async Task GetCityStateCountryByZipCode(ChangeEventArgs e)
+    {
+        try
+        {
+            zipCode = e.Value.ToString();
+            var response = await HttpClient.GetFromJsonAsync<ZipCode>($"{apiUrl}api/Institution/api/zipcode/{zipCode}");
+            if (response != null)
+            {
+                institution.City = response.City;
+                institution.State = response.State;
+                institution.Country = response.Country;
+            }
+        }
+
+        catch (Exception ex)
+        {
+            failureMessage = $"Error: {ex.Message}";
+            failurePopupVisible = true;
+        }
+    }
+
+
+
+
+    private async Task HandleValidSubmit()
+    {
+        Console.WriteLine(JsonConvert.SerializeObject(institution, Formatting.Indented));
+
+        try
+        {
+            HttpResponseMessage response = await HttpClient.PostAsJsonAsync("https://localhost:7128/api/Postdata/api/institution", institution);
+
+            if (response.IsSuccessStatusCode)
+            {
+                string responseContent = await response.Content.ReadAsStringAsync();
+                Console.WriteLine($"Response: {responseContent}");
+                successMessage = "School Registered Successfully!!";
+                successPopupVisible = true;
+            }
+            else
+            {
+                Console.WriteLine($"HTTP error: {response.StatusCode}");
+                failureMessage = "Fail To Register School!!";
+                failurePopupVisible = true;
+            }
+        }
+        catch (Exception e)
+        {
+            failureMessage = $"Error: {e.Message}";
+            failurePopupVisible = true;
+        }
+    }
+
+
+    private void HandleExamSelection(ChangeEventArgs args)
+    {
+        institution.SelectedExams = args.Value.ToString();
+    }
+
+    private void HandleFacilitySelection(ChangeEventArgs args)
+    {
+        institution.SelectedFacility = args.Value.ToString();
+    }
+
+
+    private void CloseSuccessPopup()
+    {
+        successPopupVisible = false;
+        Navigation.NavigateTo("/");
+    }
+
+    private void CloseFailurePopup()
+    {
+        failurePopupVisible = false;
+        Navigation.NavigateTo("/add_School");
+    }
+
+
+
+}

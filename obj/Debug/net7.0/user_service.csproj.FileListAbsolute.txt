@@ -1666,3 +1666,7 @@ C:\Users\DELL\source\repos\user_service\self_serving_tag\obj\Debug\net7.0\user_s
 C:\Users\DELL\source\repos\user_service\self_serving_tag\obj\Debug\net7.0\refint\user_service.dll
 C:\Users\DELL\source\repos\user_service\self_serving_tag\obj\Debug\net7.0\user_service.pdb
 C:\Users\DELL\source\repos\user_service\self_serving_tag\obj\Debug\net7.0\ref\user_service.dll
+C:\Users\DELL\source\repos\user_service\self_serving_tag\bin\Debug\net7.0\wwwroot\_framework\Newtonsoft.Json.dll
+C:\Users\DELL\source\repos\user_service\self_serving_tag\bin\Debug\net7.0\wwwroot\_framework\Newtonsoft.Json.dll.gz
+C:\Users\DELL\source\repos\user_service\self_serving_tag\bin\Debug\net7.0\Newtonsoft.Json.dll
+C:\Users\DELL\source\repos\user_service\self_serving_tag\obj\Debug\net7.0\build-gz\rnlr3P+4.gz

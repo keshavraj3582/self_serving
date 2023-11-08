@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "X5grsK7DYpzZ4EA3inNUiUpuNlv6TiWTA4LweaLZjKJ5QZ7/K3XKOkn1nd94NwEnr0iLuKjJPtmVV7Ou0D7B9A==",
+  "dgSpecHash": "/pVVsT8OhzFAvUAny+LR4k3Qo1PZB7aNd2pI3t94r2EPGT9R4nA6pLchwt+xrw6uQ9l0UbC9Hf0K/sPbwCn3jQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\DELL\\source\\repos\\user_service\\self_serving_tag\\user_service.csproj",
   "expectedPackageFiles": [
@@ -28,6 +28,7 @@
     "C:\\Users\\DELL\\.nuget\\packages\\microsoft.extensions.primitives\\7.0.0\\microsoft.extensions.primitives.7.0.0.nupkg.sha512",
     "C:\\Users\\DELL\\.nuget\\packages\\microsoft.jsinterop\\7.0.11\\microsoft.jsinterop.7.0.11.nupkg.sha512",
     "C:\\Users\\DELL\\.nuget\\packages\\microsoft.jsinterop.webassembly\\7.0.11\\microsoft.jsinterop.webassembly.7.0.11.nupkg.sha512",
+    "C:\\Users\\DELL\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\DELL\\.nuget\\packages\\system.io.pipelines\\7.0.0\\system.io.pipelines.7.0.0.nupkg.sha512",
     "C:\\Users\\DELL\\.nuget\\packages\\system.text.encodings.web\\7.0.0\\system.text.encodings.web.7.0.0.nupkg.sha512",
     "C:\\Users\\DELL\\.nuget\\packages\\system.text.json\\7.0.0\\system.text.json.7.0.0.nupkg.sha512",

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "AzTWTwPkkQFk/X/RiZ/d6BGOYBeJfC6elzbS6Hoj03c=",
+  "Hash": "126bZT0ukNUPivLhJnkifEFx3h7h/WNGbTOgfEmPy18=",
   "Source": "user_service",
   "BasePath": "/",
   "Mode": "Root",
@@ -661,6 +661,23 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\DELL\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\7.0.11\\runtimes\\browser-wasm\\lib\\net7.0\\netstandard.dll"
+    },
+    {
+      "Identity": "C:\\Users\\DELL\\source\\repos\\user_service\\self_serving_tag\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Newtonsoft.Json.dll",
+      "SourceId": "user_service",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\DELL\\source\\repos\\user_service\\self_serving_tag\\bin\\Debug\\net7.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Newtonsoft.Json.dll",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "BlazorWebAssemblyResource",
+      "AssetTraitValue": "runtime",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\DELL\\.nuget\\packages\\newtonsoft.json\\13.0.3\\lib\\net6.0\\Newtonsoft.Json.dll"
     },
     {
       "Identity": "C:\\Users\\DELL\\source\\repos\\user_service\\self_serving_tag\\bin\\Debug\\net7.0\\wwwroot\\_framework\\System.AppContext.dll",
@@ -5897,6 +5914,23 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\DELL\\source\\repos\\user_service\\self_serving_tag\\bin\\Debug\\net7.0\\wwwroot\\_framework\\System.ServiceProcess.dll"
+    },
+    {
+      "Identity": "C:\\Users\\DELL\\source\\repos\\user_service\\self_serving_tag\\obj\\Debug\\net7.0\\build-gz\\rnlr3P+4.gz",
+      "SourceId": "user_service",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\DELL\\source\\repos\\user_service\\self_serving_tag\\bin\\Debug\\net7.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Newtonsoft.Json.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "C:\\Users\\DELL\\source\\repos\\user_service\\self_serving_tag\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Newtonsoft.Json.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\DELL\\source\\repos\\user_service\\self_serving_tag\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Newtonsoft.Json.dll"
     },
     {
       "Identity": "C:\\Users\\DELL\\source\\repos\\user_service\\self_serving_tag\\obj\\Debug\\net7.0\\build-gz\\RveZf+7q.gz",
