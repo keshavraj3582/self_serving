@@ -1,0 +1,12 @@
+table[b-q12u53b133] {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th[b-q12u53b133],
+td[b-q12u53b133] {
+    border: 2px solid black;
+    border-radius: 2px;
+    padding: 8px;
+    text-align: center;
+}

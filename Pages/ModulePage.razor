@@ -1,5 +1,6 @@
 ﻿@page "/moduleselection"
 @inject HttpClient HttpClient
+@inject NavigationManager NavigationManager
 @using user_service.Models;
 <h3>Available Modules</h3>
 
@@ -46,14 +47,17 @@
             }
 
         </tbody>
-
+        <br/> 
     </table>
+    <br />
+    <br />
 
     <label>School Code:</label>
     <InputText @bind-Value="schoolCode" />
     <br />
 
     <button @onclick="AddSelectedModules">Add Selected Modules</button>
+    
 }
 else
 {
@@ -61,6 +65,7 @@ else
 }
 
 @code {
+    
     private List<Module> modules;
     private Dictionary<int, bool> selectedModules = new Dictionary<int, bool>();
     private string schoolCode = string.Empty;
@@ -76,6 +81,7 @@ else
         {
             if (isChecked)
             {
+                
                 selectedModules[moduleId] = true;
             }
             else
@@ -96,6 +102,7 @@ else
             if (response.IsSuccessStatusCode)
             {
                 Console.WriteLine("Selected modules added successfully.");
+             //   NavigationManager.NavigateTo("/welcome");
             }
             else
             {

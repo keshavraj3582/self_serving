@@ -832,6 +832,7 @@ C:\Users\DELL\source\repos\user_service\obj\Debug\net7.0\refint\user_service.dll
 C:\Users\DELL\source\repos\user_service\obj\Debug\net7.0\user_service.pdb
 C:\Users\DELL\source\repos\user_service\obj\Debug\net7.0\ref\user_service.dll
 C:\Users\DELL\source\repos\user_service\obj\Debug\net7.0\build-gz\opaC6nme.gz
+C:\Users\DELL\source\repos\user_service\self_serving_tag\bin\Debug\net7.0\wwwroot\_framework\blazor.boot.json
 C:\Users\DELL\source\repos\user_service\self_serving_tag\bin\Debug\net7.0\wwwroot\_framework\blazor.webassembly.js
 C:\Users\DELL\source\repos\user_service\self_serving_tag\bin\Debug\net7.0\wwwroot\_framework\dotnet.7.0.11.44kpfsuh7n.js
 C:\Users\DELL\source\repos\user_service\self_serving_tag\bin\Debug\net7.0\wwwroot\_framework\dotnet.timezones.blat
@@ -869,6 +870,7 @@ C:\Users\DELL\source\repos\user_service\self_serving_tag\bin\Debug\net7.0\wwwroo
 C:\Users\DELL\source\repos\user_service\self_serving_tag\bin\Debug\net7.0\wwwroot\_framework\Microsoft.Win32.Registry.dll
 C:\Users\DELL\source\repos\user_service\self_serving_tag\bin\Debug\net7.0\wwwroot\_framework\mscorlib.dll
 C:\Users\DELL\source\repos\user_service\self_serving_tag\bin\Debug\net7.0\wwwroot\_framework\netstandard.dll
+C:\Users\DELL\source\repos\user_service\self_serving_tag\bin\Debug\net7.0\wwwroot\_framework\Newtonsoft.Json.dll
 C:\Users\DELL\source\repos\user_service\self_serving_tag\bin\Debug\net7.0\wwwroot\_framework\System.AppContext.dll
 C:\Users\DELL\source\repos\user_service\self_serving_tag\bin\Debug\net7.0\wwwroot\_framework\System.Buffers.dll
 C:\Users\DELL\source\repos\user_service\self_serving_tag\bin\Debug\net7.0\wwwroot\_framework\System.Collections.Concurrent.dll
@@ -1030,10 +1032,9 @@ C:\Users\DELL\source\repos\user_service\self_serving_tag\bin\Debug\net7.0\wwwroo
 C:\Users\DELL\source\repos\user_service\self_serving_tag\bin\Debug\net7.0\wwwroot\_framework\System.Xml.XmlSerializer.dll
 C:\Users\DELL\source\repos\user_service\self_serving_tag\bin\Debug\net7.0\wwwroot\_framework\System.Xml.XPath.dll
 C:\Users\DELL\source\repos\user_service\self_serving_tag\bin\Debug\net7.0\wwwroot\_framework\System.Xml.XPath.XDocument.dll
-C:\Users\DELL\source\repos\user_service\self_serving_tag\bin\Debug\net7.0\wwwroot\_framework\WindowsBase.dll
-C:\Users\DELL\source\repos\user_service\self_serving_tag\bin\Debug\net7.0\wwwroot\_framework\blazor.boot.json
 C:\Users\DELL\source\repos\user_service\self_serving_tag\bin\Debug\net7.0\wwwroot\_framework\user_service.dll
 C:\Users\DELL\source\repos\user_service\self_serving_tag\bin\Debug\net7.0\wwwroot\_framework\user_service.pdb
+C:\Users\DELL\source\repos\user_service\self_serving_tag\bin\Debug\net7.0\wwwroot\_framework\WindowsBase.dll
 C:\Users\DELL\source\repos\user_service\self_serving_tag\bin\Debug\net7.0\wwwroot\_framework\System.Threading.ThreadPool.dll.gz
 C:\Users\DELL\source\repos\user_service\self_serving_tag\bin\Debug\net7.0\wwwroot\_framework\System.Security.SecureString.dll.gz
 C:\Users\DELL\source\repos\user_service\self_serving_tag\bin\Debug\net7.0\wwwroot\_framework\System.Threading.Tasks.Parallel.dll.gz
@@ -1178,6 +1179,7 @@ C:\Users\DELL\source\repos\user_service\self_serving_tag\bin\Debug\net7.0\wwwroo
 C:\Users\DELL\source\repos\user_service\self_serving_tag\bin\Debug\net7.0\wwwroot\_framework\icudt_no_CJK.dat.gz
 C:\Users\DELL\source\repos\user_service\self_serving_tag\bin\Debug\net7.0\wwwroot\_framework\System.Diagnostics.TraceSource.dll.gz
 C:\Users\DELL\source\repos\user_service\self_serving_tag\bin\Debug\net7.0\wwwroot\_framework\System.ServiceProcess.dll.gz
+C:\Users\DELL\source\repos\user_service\self_serving_tag\bin\Debug\net7.0\wwwroot\_framework\Newtonsoft.Json.dll.gz
 C:\Users\DELL\source\repos\user_service\self_serving_tag\bin\Debug\net7.0\wwwroot\_framework\System.Xml.XmlDocument.dll.gz
 C:\Users\DELL\source\repos\user_service\self_serving_tag\bin\Debug\net7.0\wwwroot\_framework\dotnet.wasm.gz
 C:\Users\DELL\source\repos\user_service\self_serving_tag\bin\Debug\net7.0\wwwroot\_framework\blazor.webassembly.js.gz
@@ -1260,6 +1262,7 @@ C:\Users\DELL\source\repos\user_service\self_serving_tag\bin\Debug\net7.0\Micros
 C:\Users\DELL\source\repos\user_service\self_serving_tag\bin\Debug\net7.0\Microsoft.Extensions.Primitives.dll
 C:\Users\DELL\source\repos\user_service\self_serving_tag\bin\Debug\net7.0\Microsoft.JSInterop.dll
 C:\Users\DELL\source\repos\user_service\self_serving_tag\bin\Debug\net7.0\Microsoft.JSInterop.WebAssembly.dll
+C:\Users\DELL\source\repos\user_service\self_serving_tag\bin\Debug\net7.0\Newtonsoft.Json.dll
 C:\Users\DELL\source\repos\user_service\self_serving_tag\bin\Debug\net7.0\System.IO.Pipelines.dll
 C:\Users\DELL\source\repos\user_service\self_serving_tag\bin\Debug\net7.0\Microsoft.CSharp.dll
 C:\Users\DELL\source\repos\user_service\self_serving_tag\bin\Debug\net7.0\Microsoft.VisualBasic.Core.dll
@@ -1464,6 +1467,7 @@ C:\Users\DELL\source\repos\user_service\self_serving_tag\obj\Debug\net7.0\build-
 C:\Users\DELL\source\repos\user_service\self_serving_tag\obj\Debug\net7.0\build-gz\KBsTJiQa.gz
 C:\Users\DELL\source\repos\user_service\self_serving_tag\obj\Debug\net7.0\build-gz\opaC6nme.gz
 C:\Users\DELL\source\repos\user_service\self_serving_tag\obj\Debug\net7.0\build-gz\8nr5vIxf.gz
+C:\Users\DELL\source\repos\user_service\self_serving_tag\obj\Debug\net7.0\build-gz\rnlr3P+4.gz
 C:\Users\DELL\source\repos\user_service\self_serving_tag\obj\Debug\net7.0\build-gz\wxkQMTWG.gz
 C:\Users\DELL\source\repos\user_service\self_serving_tag\obj\Debug\net7.0\build-gz\VpXoDDot.gz
 C:\Users\DELL\source\repos\user_service\self_serving_tag\obj\Debug\net7.0\build-gz\uE8c9+Lz.gz
@@ -1652,6 +1656,7 @@ C:\Users\DELL\source\repos\user_service\self_serving_tag\obj\Debug\net7.0\static
 C:\Users\DELL\source\repos\user_service\self_serving_tag\obj\Debug\net7.0\staticwebassets.build.json
 C:\Users\DELL\source\repos\user_service\self_serving_tag\obj\Debug\net7.0\staticwebassets.development.json
 C:\Users\DELL\source\repos\user_service\self_serving_tag\obj\Debug\net7.0\scopedcss\Pages\Index.razor.rz.scp.css
+C:\Users\DELL\source\repos\user_service\self_serving_tag\obj\Debug\net7.0\scopedcss\Pages\RegisterSchool.razor.rz.scp.css
 C:\Users\DELL\source\repos\user_service\self_serving_tag\obj\Debug\net7.0\scopedcss\Pages\RegisterUser.razor.rz.scp.css
 C:\Users\DELL\source\repos\user_service\self_serving_tag\obj\Debug\net7.0\scopedcss\Pages\UserLogin.razor.rz.scp.css
 C:\Users\DELL\source\repos\user_service\self_serving_tag\obj\Debug\net7.0\scopedcss\Pages\ValidateEmail.razor.rz.scp.css
@@ -1666,8 +1671,4 @@ C:\Users\DELL\source\repos\user_service\self_serving_tag\obj\Debug\net7.0\user_s
 C:\Users\DELL\source\repos\user_service\self_serving_tag\obj\Debug\net7.0\refint\user_service.dll
 C:\Users\DELL\source\repos\user_service\self_serving_tag\obj\Debug\net7.0\user_service.pdb
 C:\Users\DELL\source\repos\user_service\self_serving_tag\obj\Debug\net7.0\ref\user_service.dll
-C:\Users\DELL\source\repos\user_service\self_serving_tag\bin\Debug\net7.0\wwwroot\_framework\Newtonsoft.Json.dll
-C:\Users\DELL\source\repos\user_service\self_serving_tag\bin\Debug\net7.0\wwwroot\_framework\Newtonsoft.Json.dll.gz
-C:\Users\DELL\source\repos\user_service\self_serving_tag\bin\Debug\net7.0\Newtonsoft.Json.dll
-C:\Users\DELL\source\repos\user_service\self_serving_tag\obj\Debug\net7.0\build-gz\rnlr3P+4.gz
-C:\Users\DELL\source\repos\user_service\self_serving_tag\obj\Debug\net7.0\scopedcss\Pages\RegisterSchool.razor.rz.scp.css
+C:\Users\DELL\source\repos\user_service\self_serving_tag\obj\Debug\net7.0\scopedcss\Pages\InstitutionDetails.razor.rz.scp.css

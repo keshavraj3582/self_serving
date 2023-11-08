@@ -1,0 +1,62 @@
+﻿@page "/institutionDetails/{schoolCodeNew}"
+@inject HttpClient HttpClient
+@inject NavigationManager NavigationManager
+@inject IJSRuntime JSRuntime
+@using Microsoft.AspNetCore.Components.Web
+@using user_service.Models;
+<button @onclick="GoBack">Go Back</button>
+<div id="InstitutionDetails">
+    @if (fetchedInstitution != null)
+    {
+        <p><strong>Institution Name:</strong> @fetchedInstitution.InstitutionName</p>
+        <p><strong>Address:</strong> @fetchedInstitution.Address</p>
+        <p><strong>Zip Code:</strong> @fetchedInstitution.ZipCodes</p>
+        <p><strong>Country:</strong> @fetchedInstitution.Country</p>
+        <p><strong>State:</strong> @fetchedInstitution.State</p>
+        <p><strong>City:</strong> @fetchedInstitution.City</p>
+        <p><strong>Contact:</strong> @fetchedInstitution.Contact</p>
+        <p><strong>URL:</strong> @fetchedInstitution.Url</p>
+        @* <p><strong>Available Exams:</strong> @fetchedInstitution.AvailableExams</p> *@
+        <p><strong>Selected Exams:</strong> @fetchedInstitution.SelectedExams</p>
+        @* <p><strong>Available Facility:</strong> @fetchedInstitution.AvailableFacility</p> *@
+        <p><strong>Selected Facility:</strong> @fetchedInstitution.SelectedFacility</p>
+        <p><strong>School Code:</strong> @fetchedInstitution.SchoolCode</p>
+        <p><strong>Verification Status:</strong> @fetchedInstitution.VerificationStatus</p>
+    }
+    else
+    {
+        <p>No institution data available.</p>
+    }
+</div>
+
+@code {
+    [Parameter] public string schoolCodeNew { get; set; }
+    private Institution fetchedInstitution;
+    private string apiUrl = "https://localhost:7128";
+    protected override async Task OnInitializedAsync()
+    {
+        if (!string.IsNullOrEmpty(schoolCodeNew))
+        {
+            try
+            {
+                var response = await HttpClient.GetAsync($"{apiUrl}/api/Institution/api/institution/{schoolCodeNew}");
+                if (response.IsSuccessStatusCode)
+                {
+                    fetchedInstitution = await response.Content.ReadFromJsonAsync<Institution>();
+                }
+                else
+                {
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+    }
+
+    private void GoBack()
+    {
+        NavigationManager.NavigateTo("/welcomeuser");
+    }
+}

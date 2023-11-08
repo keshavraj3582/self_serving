@@ -58,7 +58,9 @@
         var response = await Http.PostAsJsonAsync("https://localhost:7128/Api/ValidateOtpForLogin", payload);
         if (response.IsSuccessStatusCode)
         {
-            NavigationManager.NavigateTo("/add_School");
+            otpMessage = "Validated";
+            NavigationManager.NavigateTo("/welcome");
+            
         }
         else if (response.StatusCode == System.Net.HttpStatusCode.BadRequest)
         {

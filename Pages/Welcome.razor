@@ -1,16 +1,56 @@
-@page "/welcome"
-@using Microsoft.AspNetCore.Components.Web
+@page "/welcomeuser"
+@inject NavigationManager Navigation
+@inject HttpClient HttpClient
 @using user_service.Models;
-
-<h2>Welcome</h2>
-
-<div>
+ 
+    <PageTitle>User Home Page</PageTitle>
+ 
+    <h1>Welcome,!</h1>
+ 
+    <button type="submit" class="btn btn-success" @onclick="NewSchool">Add Institution</button>
+    <br>
+    <br>
+ 
+    <table class="table">
+    <thead>
+    <tr>
+    <th>School Code</th>
+    <th>Institution Name</th>
+    </tr>
+    </thead>
+    <tbody>
+            @foreach (var schoolDetail in schoolDetails)
+            {
+    <tr>
+   @*  <td><a @onclick="(() => SchoolDetails(schoolDetail.SchoolCode))">@schoolDetail.SchoolCode</a></td> *@
+                    
+    <td>@schoolDetail.InstitutionName</td>
+    </tr>
+            }
+    </tbody>
+    </table>
+@code {
+ 
+    private void NewSchool()
+    {
+        Navigation.NavigateTo("/add_School");
+    }
+ 
+    private List<Institution> schoolDetails = new List<Institution>();
+ 
+    protected override async Task OnInitializedAsync()
+    {
     
-    @* <p><strong>Name:</strong> @model.RegName</p>
-    <p><strong>Phone Number:</strong> @model.RegPhone</p>
-    <p><strong>Designation:</strong> @model.RegDest</p>
-    <p><strong>Email:</strong> @model.Email</p> *@
-</div>
-@code{
-    private Model model = new Model();
+            schoolDetails = await HttpClient.GetFromJsonAsync<List<Institution>>("https://localhost:7128/api/Institution/api/institution/all");
+ 
+    }
+ 
+    private async Task SchoolDetails(string schoolCode)
+    {
+        
+        Navigation.NavigateTo($"/institutionDetails/{schoolCode}");
+    }
 }
+
+
+<Welcome />

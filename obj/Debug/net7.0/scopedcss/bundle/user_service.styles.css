@@ -48,6 +48,35 @@ button:hover[b-h6sz5mb1od] {
         background-position: -200% 0;
     }
 }
+/* /Pages/InstitutionDetails.razor.rz.scp.css */
+#InstitutionDetails[b-uin3n6uke7] {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+p[b-uin3n6uke7] {
+    margin-bottom: 10px;
+}
+
+button[b-uin3n6uke7] {
+    margin-bottom: 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+    button:hover[b-uin3n6uke7] {
+        background-color: #0056b3;
+    }
 /* /Pages/RegisterSchool.razor.rz.scp.css */
 /* SchoolModelForm.razor CSS */
 
@@ -686,6 +715,18 @@ body[b-3mv8brxcne] {
     }
 }
 /* /Pages/Welcome.razor.rz.scp.css */
+table[b-q12u53b133] {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th[b-q12u53b133],
+td[b-q12u53b133] {
+    border: 2px solid black;
+    border-radius: 2px;
+    padding: 8px;
+    text-align: center;
+}
 /* /Shared/MainLayout.razor.rz.scp.css */
 .page[b-0uwrh8or5p] {
     position: relative;
