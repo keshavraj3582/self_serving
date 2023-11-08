@@ -99,3 +99,16 @@ a, .btn-link {
     .loading-progress-text:after {
         content: var(--blazor-load-percentage-text, "Loading");
     }
+
+/* YourComponent.razor.css (or a separate .css file) */
+.table-bordered {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+    .table-bordered th,
+    .table-bordered td {
+        border: 1px solid #000; /* Adjust the color and border thickness as needed */
+        padding: 8px;
+    }
+

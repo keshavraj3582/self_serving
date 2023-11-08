@@ -1,0 +1,110 @@
+﻿@page "/moduleselection"
+@inject HttpClient HttpClient
+@using user_service.Models;
+<h3>Available Modules</h3>
+
+
+@if (modules != null && modules.Any())
+{
+
+    <table class="table-bordered">
+
+        <thead>
+
+            <tr>
+
+                <th>Module ID   </th>
+
+                <th>Module Name  </th>
+
+                <th>Module Amount   </th>
+
+                <th>Select</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+            @foreach (var module in modules)
+
+            {
+
+                <tr>
+
+                    <td>@module.ModuleId</td>
+
+                    <td>@module.ModuleName</td>
+
+                    <td>@module.ModuleAmount</td>
+
+                    <td><input type="checkbox" @onchange="e => HandleCheckboxChange(e, module.ModuleId)" checked="@selectedModules.ContainsKey(module.ModuleId)" /></td>
+
+                </tr>
+
+            }
+
+        </tbody>
+
+    </table>
+
+    <label>School Code:</label>
+    <InputText @bind-Value="schoolCode" />
+    <br />
+
+    <button @onclick="AddSelectedModules">Add Selected Modules</button>
+}
+else
+{
+    <p>No modules available.</p>
+}
+
+@code {
+    private List<Module> modules;
+    private Dictionary<int, bool> selectedModules = new Dictionary<int, bool>();
+    private string schoolCode = string.Empty;
+
+    protected override async Task OnInitializedAsync()
+    {
+        modules = await HttpClient.GetFromJsonAsync<List<Module>>($"https://localhost:7128/api/Module/api/modules");
+    }
+
+    private void HandleCheckboxChange(ChangeEventArgs e, int moduleId)
+    {
+        if (e.Value is bool isChecked)
+        {
+            if (isChecked)
+            {
+                selectedModules[moduleId] = true;
+            }
+            else
+            {
+                selectedModules.Remove(moduleId);
+            }
+        }
+    }
+
+    private async Task AddSelectedModules()
+    {
+        var selectedModuleIds = selectedModules.Keys.ToList();
+
+        if (selectedModuleIds.Any() && !string.IsNullOrEmpty(schoolCode))
+        {
+            var response = await HttpClient.PostAsJsonAsync($"https://localhost:7128/api/Module/api/modules?schoolCode={schoolCode}", selectedModuleIds);
+
+            if (response.IsSuccessStatusCode)
+            {
+                Console.WriteLine("Selected modules added successfully.");
+            }
+            else
+            {
+                Console.WriteLine("Failed to add selected modules.");
+            }
+        }
+        else
+        {
+            Console.WriteLine("Invalid module selection or school code.");
+        }
+    }
+}

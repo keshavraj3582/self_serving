@@ -1,0 +1,87 @@
+/* SchoolModelForm.razor CSS */
+
+/* Form container styles */
+form[b-p91kc7xro9] {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+label[b-p91kc7xro9] {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+input[type="text"][b-p91kc7xro9], input[type="checkbox"][b-p91kc7xro9] {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button[b-p91kc7xro9] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+    button:hover[b-p91kc7xro9] {
+        background-color: #45a049;
+    }
+
+.error-message[b-p91kc7xro9] {
+    color: red;
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+.popup[b-p91kc7xro9] {
+    width: 400px;
+    background: #0b0b0b;
+    border-radius: 6px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.1);
+    text-align: center;
+    padding: 0 30px 30px;
+    color: #333;
+    visibility: hidden;
+    transition: transform 0.4s, top 0.4s;
+}
+
+.open-popup[b-p91kc7xro9] {
+    visibility: visible;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.popup h2[b-p91kc7xro9] {
+    font-size: 25px;
+    font-weight: 500;
+    margin: 30px 0 10px;
+    color: #ffffff;
+    font-family: cursive;
+}
+
+.popup button[b-p91kc7xro9] {
+    width: 100%;
+    margin-top: 50px;
+    padding: 10px 0;
+    background: #b35212;
+    color: #fff;
+    border: 0;
+    outline: none;
+    font-size: 18px;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+}
+

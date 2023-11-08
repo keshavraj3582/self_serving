@@ -20,12 +20,12 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/DELL/source/repos/user_service/self_serving_tag/Pages/PayAmount.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGF5QW1vdW50LnJhem9y
+[C:/Users/DELL/source/repos/user_service/self_serving_tag/Pages/ModulePage.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTW9kdWxlUGFnZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/DELL/source/repos/user_service/self_serving_tag/Pages/RegisterSchool.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVnaXN0ZXJTY2hvb2wucmF6b3I=
+[C:/Users/DELL/source/repos/user_service/self_serving_tag/Pages/PayAmount.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGF5QW1vdW50LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/DELL/source/repos/user_service/self_serving_tag/Shared/SurveyPrompt.razor]
@@ -39,6 +39,10 @@ build_metadata.AdditionalFiles.CssScope =
 [C:/Users/DELL/source/repos/user_service/self_serving_tag/Pages/Index.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-h6sz5mb1od
+
+[C:/Users/DELL/source/repos/user_service/self_serving_tag/Pages/RegisterSchool.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVnaXN0ZXJTY2hvb2wucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-p91kc7xro9
 
 [C:/Users/DELL/source/repos/user_service/self_serving_tag/Pages/RegisterUser.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVnaXN0ZXJVc2VyLnJhem9y
