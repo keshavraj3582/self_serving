@@ -1,6 +1,7 @@
 ﻿@page "/moduleselection"
 @inject HttpClient HttpClient
 @inject NavigationManager NavigationManager
+@using Microsoft.AspNetCore.Components.Web
 @using user_service.Models;
 <h3>Available Modules</h3>
 
@@ -63,8 +64,28 @@ else
 {
     <p>No modules available.</p>
 }
+<!-- Modal for Success -->
+<div class="popup @(successPopupVisible ? "open-popup" : "")" @ref="successPopup">
+    <h2 id="successMessage">@successMessage</h2>
+    <button type="button" @onclick="CloseSuccessPopup">Ok</button>
+</div>
+
+<!-- Modal for Failure -->
+<div class="popup @(failurePopupVisible ? "open-popup" : "")" @ref="failurePopup">
+    <h2 id="failureMessage">@failureMessage</h2>
+    <button type="button" @onclick="CloseFailurePopup">Ok</button>
+</div>
 
 @code {
+    private bool successPopupVisible = false;
+    private string successMessage = "";
+
+    private bool failurePopupVisible = false;
+    private string failureMessage = "";
+
+    private ElementReference successPopup;
+    private ElementReference failurePopup;
+    
     
     private List<Module> modules;
     private Dictionary<int, bool> selectedModules = new Dictionary<int, bool>();
@@ -72,7 +93,16 @@ else
 
     protected override async Task OnInitializedAsync()
     {
-        modules = await HttpClient.GetFromJsonAsync<List<Module>>($"https://localhost:7128/api/Module/api/modules");
+        try
+        {
+            modules = await HttpClient.GetFromJsonAsync<List<Module>>($"https://localhost:7128/api/Module/api/modules");
+        }
+        catch (Exception ex)
+        {
+            failureMessage = $"{ex.Message} occured Fetching Modules!!";
+            failurePopupVisible = true;
+        }
+      //  modules = await HttpClient.GetFromJsonAsync<List<Module>>($"https://localhost:7128/api/Module/api/modules");
     }
 
     private void HandleCheckboxChange(ChangeEventArgs e, int moduleId)
@@ -97,21 +127,60 @@ else
 
         if (selectedModuleIds.Any() && !string.IsNullOrEmpty(schoolCode))
         {
-            var response = await HttpClient.PostAsJsonAsync($"https://localhost:7128/api/Module/api/modules?schoolCode={schoolCode}", selectedModuleIds);
+            try
+            {
+                var response = await HttpClient.PostAsJsonAsync($"https://localhost:7128/api/Module/api/modules?schoolCode={schoolCode}", selectedModuleIds);
 
-            if (response.IsSuccessStatusCode)
-            {
-                Console.WriteLine("Selected modules added successfully.");
-             //   NavigationManager.NavigateTo("/welcome");
+
+                if (response.IsSuccessStatusCode)
+                {
+                    @* Console.WriteLine("Selected modules added successfully."); *@
+                    successMessage = "Selected modules added successfully.";
+                    successPopupVisible = true;
+                }
+                else
+                {
+                    @* Console.WriteLine("Failed to add selected modules."); *@
+                    failureMessage = "Failed to add selected modules.";
+                    failurePopupVisible = true;
+                }
             }
-            else
+            catch (Exception e)
             {
-                Console.WriteLine("Failed to add selected modules.");
+                failureMessage = $"Error: {e.Message} sending Modules!!";
+                failurePopupVisible = true;
             }
+            
+            // var response = await HttpClient.PostAsJsonAsync($"https://localhost:7128/api/Module/api/modules?schoolCode={schoolCode}", selectedModuleIds);
+
+            // if (response.IsSuccessStatusCode)
+            // {
+            //     Console.WriteLine("Selected modules added successfully.");
+            //  //   NavigationManager.NavigateTo("/welcome");
+            // }
+            // else
+            // {
+            //     Console.WriteLine("Failed to add selected modules.");
+            // }
         }
         else
         {
+           
             Console.WriteLine("Invalid module selection or school code.");
+            failureMessage = "Invalid module selection or school code.";
+            failurePopupVisible = true;
         }
+
+    }
+    private void CloseSuccessPopup()
+    {
+        NavigationManager.NavigateTo("/welcomeuser");
+        successPopupVisible = false;
+    }
+
+    private void CloseFailurePopup()
+    {
+        NavigationManager.NavigateTo("/moduleselection");
+        failurePopupVisible = false;
     }
 }

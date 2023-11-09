@@ -25,16 +25,17 @@
                 <label class="label" for="otp">Enter OTP</label>
                 <InputText type="text" id="otp" class="input-field" @bind-Value="model.OTP" required />
             </div>
+            @if (!string.IsNullOrEmpty(emailMessage))
+            {
+                <div class="alert alert-danger mt-3">@emailMessage</div>
+            }
 
       
             <div class="input_box">
                 <button class="input-submit" @onclick="Validate">Validate</button>
             </div>
         </div>
-        @if (!string.IsNullOrEmpty(emailMessage))
-        {
-            <div class="alert alert-success mt-3">@emailMessage</div>
-        }
+        
     </div>
 </EditForm>
 

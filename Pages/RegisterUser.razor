@@ -36,15 +36,16 @@
                 <label class="label" for="Email"><b>Email</b></label>
                 <InputText type="text" id="Email" class="form-control" @bind-Value="model.Email" required />
             </div>
+            @if (!string.IsNullOrEmpty(postMessage))
+            {
+                <div class="alert alert-danger mt-3">@postMessage</div>
+            }
            
             <div class="input_box">
                 <button class="input-submit" @onclick="SendOTP">Send Otp</button>
             </div>
         </div>
-        @if (!string.IsNullOrEmpty(postMessage))
-        {
-            <div class="alert alert-success mt-3">@postMessage</div>
-        }
+       
     </div>
 </EditForm>
 

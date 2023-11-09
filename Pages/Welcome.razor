@@ -1,6 +1,137 @@
 @page "/welcomeuser"
 @inject NavigationManager Navigation
 @inject HttpClient HttpClient
+@using user_service.Models
+<PageTitle>User Home Page</PageTitle>
+
+
+
+<h1>Welcome!</h1>
+
+<button type="submit" class="btn btn-success" @onclick="NewSchool">Add Institution</button>
+<br>
+<br>
+
+@if (schoolDetails.Any())
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Institution Code</th>
+                <th>Institution Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var schoolDetail in schoolDetails)
+            {
+                <tr>
+                    <td><a @onclick="(() => SchoolDetails(schoolDetail.SchoolCode))">@schoolDetail.SchoolCode</a></td>
+                    <td>@schoolDetail.InstitutionName</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No school details are available.</p>
+}
+
+@code {
+    private List<Institution> schoolDetails = new(); // Initialize the list
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            schoolDetails = await HttpClient.GetFromJsonAsync<List<Institution>>("https://localhost:7128/api/Institution/api/institution/all");
+        }
+        catch (Exception ex)
+        {
+            // Log the exception and handle appropriately
+        }
+    }
+
+    private void NewSchool()
+    {
+        Navigation.NavigateTo("/add_School");
+    }
+
+    private void SchoolDetails(string schoolCode)
+    {
+        Navigation.NavigateTo($"/institutionDetails/{schoolCode}");
+    }
+}
+@* @page "/welcomeuser"
+@inject NavigationManager Navigation
+@inject HttpClient HttpClient
+@using user_service.Models
+<PageTitle>User Home Page</PageTitle>
+
+<Welcome />
+
+<h1>Welcome,!</h1>
+
+<button type="submit" class="btn btn-success" @onclick="NewSchool">Add Institution</button>
+<br>
+<br>
+
+@if (schoolDetails != null && schoolDetails.Any())
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Institution Code</th>
+                <th>Institution Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var schoolDetail in schoolDetails)
+            {
+                <tr>
+                    <td><a @onclick="(() => SchoolDetails(schoolDetail.SchoolCode))">@schoolDetail.SchoolCode</a></td>
+                    <td>@schoolDetail.InstitutionName</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No school details are available.</p>
+}
+
+@code {
+    private List<Institution> schoolDetails;
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            schoolDetails = await HttpClient.GetFromJsonAsync<List<Institution>>("https://localhost:7128/api/Institution/api/institution/all");
+            //schoolDetails = await HttpClient.GetFromJsonAsync<List<Institution>>("api/institution/all");
+        }
+        catch (Exception ex)
+        {
+            // Handle the exception (log it, show a message to the user, etc.)
+        }
+    }
+
+    private void NewSchool()
+    {
+        Navigation.NavigateTo("/add_School");
+    }
+
+    private void SchoolDetails(string schoolCode)
+    {
+        Navigation.NavigateTo($"/institutionDetails/{schoolCode}");
+    }
+} *@
+
+
+@* @page "/welcomeuser"
+@inject NavigationManager Navigation
+@inject HttpClient HttpClient
 @using user_service.Models;
  
     <PageTitle>User Home Page</PageTitle>
@@ -13,19 +144,20 @@
  
     <table class="table">
     <thead>
-    <tr>
-    <th>School Code</th>
+        <tr>
+            <Welcome />
+    <th>Institution Code</th>
     <th>Institution Name</th>
     </tr>
     </thead>
     <tbody>
             @foreach (var schoolDetail in schoolDetails)
             {
-    <tr>
-   @*  <td><a @onclick="(() => SchoolDetails(schoolDetail.SchoolCode))">@schoolDetail.SchoolCode</a></td> *@
+                <tr>
+                    <td><a @onclick="(() => SchoolDetails(schoolDetail.SchoolCode))">@schoolDetail.SchoolCode</a></td>
                     
-    <td>@schoolDetail.InstitutionName</td>
-    </tr>
+                    <td>@schoolDetail.InstitutionName</td>
+                </tr>
             }
     </tbody>
     </table>
@@ -50,7 +182,5 @@
         
         Navigation.NavigateTo($"/institutionDetails/{schoolCode}");
     }
-}
+} *@
 
-
-<Welcome />

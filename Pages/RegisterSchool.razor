@@ -24,8 +24,12 @@
     <label>Address:</label>
     <InputText @bind-Value="institution.Address" /><br />
 
-    <label>Zip Codes:</label>
-    <InputText @bind-Value="institution.ZipCodes" /><br />
+    <label>Zip Code:</label>
+    <InputText id="input" @bind-Value="institution.ZipCodes" @oninput="GetCityStateCountryByZipCode" />
+    <ValidationMessage For="@(() => institution.ZipCodes)" class="validation-error" /><br />
+
+    @* <label>Zip Codes:</label>
+    <InputText @bind-Value="institution.ZipCodes" /><br /> *@
 
     <label>Country:</label>
     <InputText @bind-Value="institution.Country" /><br />
@@ -35,6 +39,7 @@
 
     <label>City:</label>
     <InputText @bind-Value="institution.City" /><br />
+    
 
     <label>Contact:</label>
     <InputText @bind-Value="institution.Contact" /><br />
@@ -92,16 +97,9 @@
 @code {
     Institution institution = new Institution();
     SchoolRegistrationModule module = new SchoolRegistrationModule();
-
     private string apiUrl = "https://localhost:7128/";
-
     private string zipCode;
-
-
-
-
     public List<string> AvailableFacility { get; set; } = new List<string> { "Select", "DAY CUM RESIDENTIAL", "DAY SCHOOL", "RESIDENTIAL SCHOOL" };
-
     decimal TotalPrice = 0;
 
     @* fields for Modal *@

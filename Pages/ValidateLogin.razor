@@ -25,16 +25,17 @@
                 <label class="label" for="otp">Enter OTP</label>
                 <InputText type="text" id="otp" class="input-field" @bind-Value="model.OTP" required />
             </div>
+            @if (!string.IsNullOrEmpty(otpMessage))
+            {
+                <div class="alert alert-danger mt-3">@otpMessage</div>
+            }
 
             <!-- Submit Button -->
             <div class="input_box">
-                <button class="input-submit" @onclick="Validate">Validate</button>
+                <button class="input-submit" @onclick="Validate">Login</button>
             </div>
         </div>
-        @if (!string.IsNullOrEmpty(otpMessage))
-        {
-            <div class="alert alert-success mt-3">@otpMessage</div>
-        }
+      
     </div>
 </EditForm>
 
@@ -59,7 +60,7 @@
         if (response.IsSuccessStatusCode)
         {
             otpMessage = "Validated";
-            NavigationManager.NavigateTo("/welcome");
+            NavigationManager.NavigateTo("/welcomeuser");
             
         }
         else if (response.StatusCode == System.Net.HttpStatusCode.BadRequest)

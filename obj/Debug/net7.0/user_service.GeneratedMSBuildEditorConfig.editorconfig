@@ -20,10 +20,6 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/DELL/source/repos/user_service/self_serving_tag/Pages/ModulePage.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTW9kdWxlUGFnZS5yYXpvcg==
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/DELL/source/repos/user_service/self_serving_tag/Pages/PayAmount.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGF5QW1vdW50LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
@@ -43,6 +39,14 @@ build_metadata.AdditionalFiles.CssScope = b-h6sz5mb1od
 [C:/Users/DELL/source/repos/user_service/self_serving_tag/Pages/InstitutionDetails.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5zdGl0dXRpb25EZXRhaWxzLnJhem9y
 build_metadata.AdditionalFiles.CssScope = b-uin3n6uke7
+
+[C:/Users/DELL/source/repos/user_service/self_serving_tag/Pages/LoadingIndicator.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9hZGluZ0luZGljYXRvci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-bxnhnebb9t
+
+[C:/Users/DELL/source/repos/user_service/self_serving_tag/Pages/ModulePage.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTW9kdWxlUGFnZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-c0ovrba738
 
 [C:/Users/DELL/source/repos/user_service/self_serving_tag/Pages/RegisterSchool.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVnaXN0ZXJTY2hvb2wucmF6b3I=

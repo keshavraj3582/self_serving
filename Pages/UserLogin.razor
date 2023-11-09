@@ -26,12 +26,13 @@
             <div class="input_box">
                 <button class="input-submit" @onclick="SendOTP">Sent Otp</button>
             </div>
+            @if (!string.IsNullOrEmpty(loginMessage))
+            {
+                <div class="alert alert-danger mt-3">@loginMessage</div>
+            }
             
         </div>
-        @if (!string.IsNullOrEmpty(loginMessage))
-        {
-            <div class="alert alert-success mt-3">@loginMessage</div>
-        }
+       
     </div>
 </EditForm>
 

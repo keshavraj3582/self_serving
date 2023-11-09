@@ -1672,3 +1672,5 @@ C:\Users\DELL\source\repos\user_service\self_serving_tag\obj\Debug\net7.0\refint
 C:\Users\DELL\source\repos\user_service\self_serving_tag\obj\Debug\net7.0\user_service.pdb
 C:\Users\DELL\source\repos\user_service\self_serving_tag\obj\Debug\net7.0\ref\user_service.dll
 C:\Users\DELL\source\repos\user_service\self_serving_tag\obj\Debug\net7.0\scopedcss\Pages\InstitutionDetails.razor.rz.scp.css
+C:\Users\DELL\source\repos\user_service\self_serving_tag\obj\Debug\net7.0\scopedcss\Pages\ModulePage.razor.rz.scp.css
+C:\Users\DELL\source\repos\user_service\self_serving_tag\obj\Debug\net7.0\scopedcss\Pages\LoadingIndicator.razor.rz.scp.css
