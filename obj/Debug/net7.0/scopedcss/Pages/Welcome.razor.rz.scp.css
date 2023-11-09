@@ -10,3 +10,8 @@ td[b-q12u53b133] {
     padding: 8px;
     text-align: center;
 }
+a[b-q12u53b133] {
+    cursor: pointer;
+    text-decoration: underline;
+}
+

@@ -10,3 +10,8 @@ td {
     padding: 8px;
     text-align: center;
 }
+a {
+    cursor: pointer;
+    text-decoration: underline;
+}
+

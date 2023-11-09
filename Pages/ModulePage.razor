@@ -1,4 +1,4 @@
-﻿@page "/moduleselection"
+﻿@page "/moduleselection/{code}"
 @inject HttpClient HttpClient
 @inject NavigationManager NavigationManager
 @using Microsoft.AspNetCore.Components.Web
@@ -77,6 +77,7 @@ else
 </div>
 
 @code {
+    [Parameter] public string code { get; set; }
     private bool successPopupVisible = false;
     private string successMessage = "";
 
@@ -85,14 +86,15 @@ else
 
     private ElementReference successPopup;
     private ElementReference failurePopup;
-    
-    
+
+
     private List<Module> modules;
     private Dictionary<int, bool> selectedModules = new Dictionary<int, bool>();
     private string schoolCode = string.Empty;
 
     protected override async Task OnInitializedAsync()
     {
+        schoolCode = code;
         try
         {
             modules = await HttpClient.GetFromJsonAsync<List<Module>>($"https://localhost:7128/api/Module/api/modules");

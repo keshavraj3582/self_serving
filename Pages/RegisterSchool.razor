@@ -74,9 +74,9 @@
     <label>School Code:</label>
     <InputText @bind-Value="institution.SchoolCode" /><br />
 
-    <label>Verification Status:</label>
-    <InputCheckbox @bind-Value="institution.VerificationStatus" /><br />
-
+   @*  <label>Verification Status:</label>
+    <InputCheckbox @bind-Value="institution.VerificationStatus" /><br /> *@
+    <br />
 
     <button type="submit">Submit</button>
 </EditForm>
@@ -115,9 +115,10 @@
     //Getting City, State & Country Using ZipCodes
     private async Task GetCityStateCountryByZipCode(ChangeEventArgs e)
     {
+        zipCode = e.Value.ToString();
         try
         {
-            zipCode = e.Value.ToString();
+            
             var response = await HttpClient.GetFromJsonAsync<ZipCode>($"{apiUrl}api/Institution/api/zipcode/{zipCode}");
             if (response != null)
             {
@@ -181,7 +182,7 @@
     private void CloseSuccessPopup()
     {
         successPopupVisible = false;
-        Navigation.NavigateTo("/moduleselection");
+        Navigation.NavigateTo($"/moduleselection/{institution.SchoolCode}");
     }
 
     private void CloseFailurePopup()

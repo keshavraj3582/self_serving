@@ -22,7 +22,7 @@
         <p><strong>Selected Facility:</strong> @fetchedInstitution.SelectedFacility</p>
         <p><strong>Institution Code:</strong> @fetchedInstitution.SchoolCode</p>
         @* <p><strong>Verification Status:</strong> @fetchedInstitution.VerificationStatus</p> *@
-        <button @onclick="Pay">Pay </button>
+        <button @onclick="Pay" disabled="@IsButtonDissabled"> Pay </button>
     }
     else
     {
@@ -35,8 +35,25 @@
     [Parameter] public string schoolCodeNew { get; set; }
     private Institution fetchedInstitution;
     private string apiUrl = "https://localhost:7128";
+    //https://localhost:7128/api/Approvel/dav
+
+    private bool IsButtonDissabled = false;
+
     protected override async Task OnInitializedAsync()
     {
+
+
+        var status = await HttpClient.GetAsync($"{apiUrl}/api/Approvel/dav");
+        if (status.IsSuccessStatusCode)
+        {
+            var abc = await status.Content.ReadAsStringAsync();
+            IsButtonDissabled = Convert.ToBoolean(abc);
+
+        }
+        else
+        {
+        }
+
         if (!string.IsNullOrEmpty(schoolCodeNew))
         {
             try
