@@ -1,4 +1,4 @@
-﻿@page "/payment"
+﻿@page "/payment/{SchoolId}"
 @inject HttpClient httpclinet
 @using user_service.Models
 @inject IJSRuntime JSRuntime
@@ -9,26 +9,26 @@
 <EditForm Model="@registrationModel" OnValidSubmit="TotalPaymentAmounts">
     <div class="row">
         <div class="offset-1 col-2">
-            <strong>Name</strong>
+            <strong>SchoolId</strong>
         </div>
         <div class="col-4">
             <input type="text" for="Name" @bind="registrationModel.Name" class="form-control" disabled />
         </div>
     </div>
-    <div class="row">
+    @* <div class="row">
         <div class="offset-1 col-2">
-            <strong>Mobile</strong>
+            <strong>UserId</strong>
         </div>
         <div class="col-4">
-            <input type="text" for="Mobile" @bind="registrationModel.Mobile" class="form-control" disabled />
+            <input type="text" for="Mobile" @bind="registrationModel.Email" class="form-control" disabled />
         </div>
-    </div>
+    </div>*@
     <div class="row">
         <div class="offset-1 col-2">
-            <strong>Email</strong>
+            <strong>TransactionId</strong>
         </div>
         <div class="col-4">
-            <input type="text" for="Email" @bind="registrationModel.Email" class="form-control" disabled />
+            <input type="text" for="Email" @bind="registrationModel.Mobile" class="form-control" disabled />
         </div>
     </div>
     <div class="row">
@@ -45,11 +45,46 @@
 
 
 @code {
+    [Parameter] public string SchoolId { get; set; }
     public RegistrationModel registrationModel = new RegistrationModel();
     [Inject]
     private NavigationManager NavigationManager { get; set; }
 
     public RazorPayOptionsModel razorPayOptionsModel;
+    protected override async Task OnInitializedAsync()
+    {
+        registrationModel.Name = SchoolId;
+        registrationModel.Email = "";
+        GenerateRandomUsername();
+        try
+        {
+            var response = await httpclinet.GetAsync($"https://localhost:7128/api/Modules?schoolCode={SchoolId}");
+
+            if (response.IsSuccessStatusCode)
+            {
+                var jsonResponse = await response.Content.ReadAsStringAsync();
+
+                if (jsonResponse != null)
+                {
+                    registrationModel.Amount = decimal.Parse(jsonResponse);
+
+                  //  Console.WriteLine($"School approved. Selected Modules Amount: {registrationModel.A:C}");
+                    // You can now use 'selectedModulesAmount' in your Blazor UI as needed.
+                }
+                else
+                {
+                    Console.WriteLine("Failed to deserialize JSON response");
+                }
+            }
+
+
+        }
+        catch (Exception ex)
+        {
+            //exception
+        }
+        
+    }
 
     public async Task TotalPaymentAmounts()
     {
@@ -62,6 +97,12 @@
 
             //NavigationManager.NavigateTo("/razorpayUI");
         }
+    }
+    private void GenerateRandomUsername()
+    {
+
+        registrationModel.Mobile =  Guid.NewGuid().ToString("N").Substring(0, 16);
+       
     }
 }
 <script>

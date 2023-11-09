@@ -22,12 +22,14 @@
         <p><strong>Selected Facility:</strong> @fetchedInstitution.SelectedFacility</p>
         <p><strong>Institution Code:</strong> @fetchedInstitution.SchoolCode</p>
         @* <p><strong>Verification Status:</strong> @fetchedInstitution.VerificationStatus</p> *@
+        <button @onclick="Pay">Pay </button>
     }
     else
     {
         <p>No institution data available.</p>
     }
 </div>
+
 
 @code {
     [Parameter] public string schoolCodeNew { get; set; }
@@ -43,6 +45,7 @@
                 if (response.IsSuccessStatusCode)
                 {
                     fetchedInstitution = await response.Content.ReadFromJsonAsync<Institution>();
+                    
                 }
                 else
                 {
@@ -59,4 +62,9 @@
     {
         NavigationManager.NavigateTo("/welcomeuser");
     }
+    private void Pay()
+    {
+        NavigationManager.NavigateTo($"/payment/{fetchedInstitution.SchoolCode}");
+    }
+
 }
